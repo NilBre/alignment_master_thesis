@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cd 7
+
+get_dofs="~/python_plotting/bash_template/runlists/dofs_0.txt"
+get_constr="~/python_plotting/bash_template/runlists/constr_0.txt"
+
+export get_dofs
+export get_constr
+
+~/privat/AlignmentDev_HEAD/build.x86_64_v2-centos7-clang12-opt/run ~/privat/AlignmentDev_HEAD/Alignment/Escher/scripts/gaudisplititer.py -n 10 -e 5000 --aligndb ~/python_plotting/bash_template/output/misalignment_runs/7/input_misalignment/ ~/privat/AlignmentDev_HEAD/Alignment/Escher/options/AlignFT_jobs.py
