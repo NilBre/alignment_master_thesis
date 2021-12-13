@@ -1,0 +1,8 @@
+stationsLayersAll : FT/T.*Layer(X1|U|V|X2).Side : Tx Tz
+station3 : FT/T3 : Tx Tz
+middlelayer_T3 : FT/T3/Layer(U|V) : Tx Tz
+frontlayer_T1 : FT/T1/Layer(X1|U|V|X2).Side : Tx Tz
+FT/T3X1UCSide : /dd/Structure/LHCb/AfterMagnetRegion/T/FT/T3/Layer(X1|U)/Quarter(0|2) : Tx Tz
+FT/T3VX2CSide : /dd/Structure/LHCb/AfterMagnetRegion/T/FT/T3/Layer(V|X2)/Quarter(0|2) : Tx Tz
+FT/T3X1UASide : /dd/Structure/LHCb/AfterMagnetRegion/T/FT/T3/Layer(X1|U)/Quarter(1|3) : Tx Tz
+FT/T3VX2ASide : /dd/Structure/LHCb/AfterMagnetRegion/T/FT/T3/Layer(V|X2)/Quarter(1|3) : Tx Tz
