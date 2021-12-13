@@ -1,0 +1,21 @@
+alignlog to json: converts the alignlog.txt into a parsedlog.json file 
+  and globalpars.txt
+
+chi2_plots and ModuleOnly chi2: plot anyting that has something to do 
+  with chi2 plots
+
+concat_files.py: concatenate every alignlog from each iteration to one big 
+  alignlog.txt file
+
+new_combis.py & plotting_nov3.py: plotting scripts for Tx Tz Rx Rz that 
+  i am using quite often
+
+scatter_plots: scatter plot scripts
+
+Colorplots.py: plots a colorplot for each layer in each station
+
+script_2D_modules.py: visualize a 2D plot for modules
+
+plot_2020_data: has plots from runs since nov/dez 2021
+new_combis.py: has all the other plots
+rest lots from earlier are on LXPLUS
