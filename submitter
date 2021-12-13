@@ -1,0 +1,103 @@
+#!/bin/bash
+
+while getopts am flag
+do
+  case "${flag}" in
+    a)
+      declare -i n_iter=10  # number of iterations for runs
+      declare -i n_events=10000  # number of events for the run
+
+      export n_iter
+      export n_events
+
+      dof_names="runlists/dofnames.txt"
+      touch $dof_names
+
+      cd runlists
+
+      max=-1
+      for file in dofs_*.txt
+      do
+        n=${file:5:1}
+        [[ $n -gt $max ]] && max=$n
+      done
+
+      echo "number of jobs to submit: " `expr $max + 1`
+      echo '############################'
+      for ((i=0;i<=max;i++)); do
+        filename="dofs"_"$i.txt"
+        cat $filename >> "dofnames.txt"
+      done
+
+      # generate the exec file automatically since they are all the same except for the numbering
+      cd ~/python_plotting/bash_template/executables/align
+      for ((iii=0;iii<=max;iii++)); do
+        touch exec_$iii
+        printf "#!/bin/bash\n\ncd $iii\n\nget_dofs=\"~/python_plotting/bash_template/runlists/dofs_$iii.txt\"\nget_constr=\"~/python_plotting/bash_template/runlists/constr_$iii.txt\"\n\nexport get_dofs\nexport get_constr\n\n~/uni/AlignmentDev_v17r0/Alignment/build.x86_64-centos7-gcc9-opt/run ~/uni/AlignmentDev_v17r0/Alignment/Escher/scripts/gaudisplititer.py -n $n_iter -e $n_events ~/uni/AlignmentDev_v17r0/Alignment/Escher/options/AlignFT_jobs_2.py" >> exec_$iii
+        chmod +x exec_$iii
+      done
+
+      cd ~/python_plotting/bash_template/output/alignment_runs
+
+      for ((ii=0;ii<=max;ii++)); do
+        mkdir $ii
+      done
+
+      condor_submit ~/python_plotting/bash_template/align_job.sub
+      echo '############################'
+
+      ############### cleaning up #################
+#      removing the exec files and dofnames this early is not a good idea because i need to
+#      wait for the job to finish until i can remove them
+
+#      cd ~/python_plotting/bash_template
+#      echo "rm all exec_*"
+#      rm executables/align/exec_*
+#      echo "rulists/rm dofnames.txt"
+#      rm runlists/dofnames.txt
+;;
+    m)
+      declare -i n_iter=10  # number of iterations for runs
+      declare -i n_events=10000  # number of events for the run
+      declare -i n_runs=8  # number of misalignment runs with the same executable (queue 5)
+      export n_iter
+      export n_events
+      export n_runs
+
+      # if possible take a dof file and a constr file from the existing ones in the runlists for now
+      # misalign_dof, misalign_constr
+
+      misalign_dofs="~/python_plotting/bash_template/runlists/dofs_0.txt"
+      misalign_constr="~/python_plotting/bash_template/runlists/constr_0.txt"
+
+      cd ~/python_plotting/bash_template/output/misalignment_runs
+
+      for ((ii=0;ii<n_runs;ii++)); do
+        mkdir $ii
+        mkdir $ii/input_misalignment
+#        cp ../../python/input_misalignment/Mats.xml $ii/input_misalignment
+        cp ../../python/$ii/input_misalignment/Modules.xml $ii/input_misalignment
+#        cp ../../python/input_misalignment/FTSystem.xml $ii/input_misalignment
+        cd $ii/input_misalignment
+        git init
+        cd ../..
+      done
+
+      # here run the makemisalign python script (either run manually or automated and move files)
+
+      cd ~/python_plotting/bash_template/executables/misalign
+      for ((iii=0;iii<n_runs;iii++)); do
+        touch exec_$iii
+        printf "#!/bin/bash\n\ncd $iii\n\nget_dofs=\"$misalign_dofs\"\nget_constr=\"$misalign_constr\"\n\nexport get_dofs\nexport get_constr\n\n~/uni/AlignmentDev_v17r0/build.x86_64-centos7-gcc9-opt/run ~/uni/AlignmentDev_v17r0/Alignment/Escher/scripts/gaudisplititer.py -n $n_iter -e $n_events --aligndb ~/python_plotting/bash_template/output/misalignment_runs/$iii/input_misalignment/ ~/uni/AlignmentDev_v17r0/Alignment/Escher/options/AlignFT_jobs.py" >> exec_$iii
+        chmod +x exec_$iii
+      done
+
+      cd ~/python_plotting/bash_template/output/misalignment_runs
+
+      condor_submit ~/python_plotting/bash_template/misalign_job.sub
+      echo '############################'
+;;
+  esac
+done
+
+echo "all done!"

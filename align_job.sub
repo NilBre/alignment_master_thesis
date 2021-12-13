@@ -1,0 +1,23 @@
+# this is for submitter
+executable   = ../../executables/align/exec_$(Process)
+
+# forwarded alle environment variablen (remember: XML Parser error)
+getenv       = True
+
+# load user proxy
+x509userproxy = /tmp/x509up_u5257
+
+environment  = get_dofs=~/python_plotting/bash_template/runlists/dofs_$(Process).txt;get_constr=~/python_plotting/bash_template/runlists/constr_$(Process).txt
+
+output       = $(Process)/output.$(Process)
+error        = $(Process)/error.$(Process)
+log          = $(Process)/exec_align.log
+
+request_cpus   = 2
+request_memory = 2048
+request_disk   = 20480
+
+should_transfer_files = NO
+
+# queue NUMBER: the NUMBER is the number of jobs i submit
+queue 1
