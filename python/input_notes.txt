@@ -1,0 +1,15 @@
+for submitter file:
+
+if i run 3 misaligned runs i can just store the xml files in "input_xml_{NUMBER}" dirs
+
+so i can iterate over the same names but just code it like "input_xml_$ii" so each run has a 
+different input xml
+ --------------------------
+when i do "python makeMisalignFT.py -t 100 Module Translation" 100 does not seem like 100 microns,
+even though 10 microns is default so the scale should be microns
+-> every plot looks the same!!!
+
+i CAN change the default value to the one i am looking for and then the results change
+
+experiment: test chage default to 1000 microns -> 1 millimeter
+and do -t 1000 and see if the xml is roughly the same
