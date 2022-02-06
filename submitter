@@ -88,6 +88,7 @@ do
       cd ~/python_plotting/bash_template/executables/misalign
       for ((iii=0;iii<n_runs;iii++)); do
         touch exec_$iii
+#        printf "#!/bin/bash\n\ncd $iii\n\nget_dofs=\"$misalign_dofs\"\nget_constr=\"$misalign_constr\"\n\nexport get_dofs\nexport get_constr\n\n~/uni/AlignmentDev_v17r0/build.x86_64_v2-centos7-gcc11-opt/run ~/uni/AlignmentDev_v17r0/Alignment/Escher/scripts/gaudisplititer.py -n $n_iter -e $n_events --aligndb ~/python_plotting/bash_template/output/misalignment_runs/$iii/input_misalignment/ ~/uni/AlignmentDev_v17r0/Alignment/Escher/options/AlignFT_jobs.py" >> exec_$iii
         printf "#!/bin/bash\n\ncd $iii\n\nget_dofs=\"$misalign_dofs\"\nget_constr=\"$misalign_constr\"\n\nexport get_dofs\nexport get_constr\n\n~/uni/AlignmentDev_v17r0/build.x86_64-centos7-gcc9-opt/run ~/uni/AlignmentDev_v17r0/Alignment/Escher/scripts/gaudisplititer.py -n $n_iter -e $n_events --aligndb ~/python_plotting/bash_template/output/misalignment_runs/$iii/input_misalignment/ ~/uni/AlignmentDev_v17r0/Alignment/Escher/options/AlignFT_jobs.py" >> exec_$iii
         chmod +x exec_$iii
       done

@@ -199,21 +199,21 @@ align_out_config5_5000MD_2020 = open_alignment(thisfile)
 plotted_config5_5000MD_2020 = choose_modules(align_out_config5_5000MD_2020)
 
 # misaligned data
-thisfile = "../output/misalignment_runs/0/AlignmentResults/parsedlog.json"
-align_out_T50_5000MU = open_alignment(thisfile)
-plotted_T50_5000MU = choose_modules(align_out_T50_5000MU)
+#thisfile = "../output/misalignment_runs/0/AlignmentResults/parsedlog.json"
+#align_out_T50_5000MU = open_alignment(thisfile)
+#plotted_T50_5000MU = choose_modules(align_out_T50_5000MU)
 
-thisfile = "../output/misalignment_runs/1/AlignmentResults/parsedlog.json"
-align_out_T200_5000MU = open_alignment(thisfile)
-plotted_T200_5000MU = choose_modules(align_out_T200_5000MU)
+#thisfile = "../output/misalignment_runs/1/AlignmentResults/parsedlog.json"
+#align_out_T200_5000MU = open_alignment(thisfile)
+#plotted_T200_5000MU = choose_modules(align_out_T200_5000MU)
 
-thisfile = "../output/misalignment_runs/2/AlignmentResults/parsedlog.json"
-align_out_R50_5000MU = open_alignment(thisfile)
-plotted_R50_5000MU = choose_modules(align_out_R50_5000MU)
+#thisfile = "../output/misalignment_runs/2/AlignmentResults/parsedlog.json"
+#align_out_R50_5000MU = open_alignment(thisfile)
+#plotted_R50_5000MU = choose_modules(align_out_R50_5000MU)
 
-thisfile = "../output/misalignment_runs/3/AlignmentResults/parsedlog.json"
-align_out_R100_5000MU = open_alignment(thisfile)
-plotted_R100_5000MU = choose_modules(align_out_R100_5000MU)
+#thisfile = "../output/misalignment_runs/3/AlignmentResults/parsedlog.json"
+#align_out_R100_5000MU = open_alignment(thisfile)
+#plotted_R100_5000MU = choose_modules(align_out_R100_5000MU)
 
 ############## plot all the alignment plots from "1" to "10" #########################
 thisfile = "../output/alignment_runs/done_runs/HE_runs/0/AlignmentResults/parsedlog.json"
@@ -240,15 +240,15 @@ thisfile = "../output/alignment_runs/done_runs/HE_runs/5/AlignmentResults/parsed
 align_out_done5 = open_alignment(thisfile)
 plotted_done5 = choose_modules(align_out_done5)
 
-thisfile = "../output/alignment_runs/done_runs/HE_runs/6/AlignmentResults/parsedlog.json"
+thisfile = "../output/alignment_runs/done_runs/HE_runs/backup/6/AlignmentResults/parsedlog.json"
 align_out_done6 = open_alignment(thisfile)
 plotted_done6 = choose_modules(align_out_done6)
 
-thisfile = "../output/alignment_runs/done_runs/HE_runs/7/AlignmentResults/parsedlog.json"
+thisfile = "../output/alignment_runs/done_runs/HE_runs/backup/7/AlignmentResults/parsedlog.json"
 align_out_done7 = open_alignment(thisfile)
 plotted_done7 = choose_modules(align_out_done7)
 
-thisfile = "../output/alignment_runs/done_runs/HE_runs/8/AlignmentResults/parsedlog.json"
+thisfile = "../output/alignment_runs/done_runs/HE_runs/backup/8/AlignmentResults/parsedlog.json"
 align_out_done8 = open_alignment(thisfile)
 plotted_done8 = choose_modules(align_out_done8)
 
@@ -274,9 +274,71 @@ thisfile = "../output/data/config5_2019/AlignmentResults/parsedlog.json"
 align_out_config5_2019 = open_alignment(thisfile)
 plotted_config5_2019 = choose_modules(align_out_config5_2019)
 
-# config5_2020_fulliter, 10000 events
+### stack alignment data\
+thisfile = "../output/stack_alignment/config5_2019/AlignmentResults/parsedlog.json"
+align_out_stack_config5_2019 = open_alignment(thisfile)
+plotted_stack_config5_2019 = choose_modules(align_out_stack_config5_2019)
 
+thisfile = "../output/stack_alignment/TxRz_2020_HE/AlignmentResults/parsedlog.json"
+align_out_stack_TxRz_2020 = open_alignment(thisfile)
+plotted_stack_TxRz_2020 = choose_modules(align_out_stack_TxRz_2020)
 
+########### stack data ############
+### modulesOnly low luminosity ###
+# alternatively use the data from
+# clusterbias changes and see if they were implemented
+# 
+
+thisfile = "../output/stack_alignment/test_low_lumi/AlignmentResults/parsedlog.json"
+align_out_low_nohack = open_alignment(thisfile)
+plotted_low_nohack = choose_modules(align_out_low_nohack)
+ 
+thisfile = "../output/stack_alignment/test_normal_lumi/AlignmentResults/parsedlog.json"
+align_out_normal_nohack = open_alignment(thisfile)
+plotted_normal_nohack = choose_modules(align_out_normal_nohack)
+
+thisfile = "../output/stack_alignment/modules_low_lumi/AlignmentResults/parsedlog.json"
+align_out_modules_low_lumi = open_alignment(thisfile)
+plotted_modules_low_lumi = choose_modules(align_out_modules_low_lumi)
+### modulesOnly normal luminosity ###
+thisfile = "../output/stack_alignment/modules_normal_lumi/AlignmentResults/parsedlog.json"
+align_out_modules_normal_lumi = open_alignment(thisfile)
+plotted_modules_normal_lumi = choose_modules(align_out_modules_normal_lumi)
+### stationlayers low lumi ###
+thisfile = "../output/stack_alignment/clusterbias_hack/low_lumi/AlignmentResults/parsedlog.json"
+align_out_low_lumi = open_alignment(thisfile)
+plotted_low_lumi = choose_modules(align_out_low_lumi)
+### stationlayers normal lumi ###
+thisfile = "../output/stack_alignment/clusterbias_hack/normal_lumi/AlignmentResults/parsedlog.json"
+align_out_normal_lumi = open_alignment(thisfile)
+plotted_normal_lumi = choose_modules(align_out_normal_lumi)
+
+## removed 1st constr, low lumi
+thisfile = "../output/stack_alignment/clusterbias_hack/without_1st_constr/AlignmentResults/parsedlog.json"
+align_out_1st = open_alignment(thisfile)
+plotted_1st = choose_modules(align_out_1st)
+
+## removed 2nd constr, low lumi
+thisfile = "../output/stack_alignment/clusterbias_hack/without_2nd_constr/AlignmentResults/parsedlog.json"
+align_out_2nd = open_alignment(thisfile)
+plotted_2nd = choose_modules(align_out_2nd)
+
+######################## misalign + low lumi, CB hack
+thisfile = "../output/misalignment_runs/clusterbias/0/AlignmentResults/parsedlog.json"
+align_out_a = open_alignment(thisfile)
+plotted_a = choose_modules(align_out_a)
+
+thisfile = "../output/misalignment_runs/clusterbias/1/AlignmentResults/parsedlog.json"
+align_out_b = open_alignment(thisfile)
+plotted_b = choose_modules(align_out_b)
+
+thisfile = "../output/misalignment_runs/clusterbias/2/AlignmentResults/parsedlog.json"
+align_out_c = open_alignment(thisfile)
+plotted_c = choose_modules(align_out_c)
+
+thisfile = "../output/misalignment_runs/clusterbias/3/AlignmentResults/parsedlog.json"
+align_out_d = open_alignment(thisfile)
+plotted_d = choose_modules(align_out_d)
 ############## END DATA #################
 
 grouping=["LayerX1","LayerU","LayerV","LayerX2"]
@@ -288,6 +350,186 @@ for station in ["T1","T2","T3"]:
 filetitle = "RMSLayers"
 
 ###############################################################
+outdir = "stack_out"
+
+###
+# 105 - 108
+fig105=plot_RMS_bygroup(align_out_a, plotted_a, title_t,filetitle,"Tx",newgrouping,"GL, misalign translation 100mu, TxRz, with cb hack, nu=3.8",absolute=False,iternum=9)
+fig105=plot_RMS_bygroup(align_out_low_lumi, plotted_low_lumi, title_t,filetitle,"Tx",newgrouping,"GL, config5, with CB hack, TxRz, 10k events, nu=3.8",absolute=False,iternum=9,fig=fig105,color="C1",nudge=20)
+plt.ylabel(r"Mean Tx ($\mu m$)")
+plt.xlabel("Group position in z (m)")
+plt.legend(loc='upper center')
+plt.savefig(f"{outdir}/done0_Tx_5000MU_{fig105.number}.pdf")
+
+fig106=plot_RMS_bygroup(align_out_a, plotted_a, title_r,filetitle,"Rz",newgrouping,"GL, misalign translation 100mu, TxRz, with cb hack, nu=3.8",absolute=False,iternum=9)
+fig106=plot_RMS_bygroup(align_out_low_lumi, plotted_low_lumi, title_r,filetitle,"Rz",newgrouping,"GL, config5, with CB hack, TxRz, 10k events, nu=3.8",absolute=False,iternum=9,fig=fig106,color="C1",nudge=20)
+plt.ylabel(r"Mean Rz (mrad)")
+plt.xlabel("Group position in z (m)")
+plt.legend(loc='upper center')
+plt.savefig(f"{outdir}/done0_Tz_5000MU_{fig106.number}.pdf")
+
+fig107=plot_RMS_bygroup(align_out_b, plotted_b, title_t,filetitle,"Tx",newgrouping,"GL, misalign translation 10mu, TxRz, with cb hack, nu=3.8",absolute=False,iternum=9)
+fig107=plot_RMS_bygroup(align_out_low_lumi, plotted_low_lumi, title_t,filetitle,"Tx",newgrouping,"GL, config5, with CB hack, TxRz, 10k events, nu=3.8",absolute=False,iternum=9,fig=fig107,color="C1",nudge=20)
+plt.ylabel(r"Mean Tx ($\mu m$)")
+plt.xlabel("Group position in z (m)")
+plt.legend(loc='upper center')
+plt.savefig(f"{outdir}/done0_Rx_{fig107.number}.pdf")
+
+fig108=plot_RMS_bygroup(align_out_b, plotted_b, title_r,filetitle,"Rz",newgrouping,"GL, misalign translation 10mu, TxRz, with cb hack, nu=3.8",absolute=False,iternum=9)
+fig108=plot_RMS_bygroup(align_out_low_lumi, plotted_low_lumi, title_r,filetitle,"Rz",newgrouping,"GL, config5, with CB hack, TxRz, 10k events, nu=3.8",absolute=False,iternum=9,fig=fig108,color="C1",nudge=20)
+plt.ylabel(r"Mean Rz (mrad)")
+plt.xlabel("Group position in z (m)")
+plt.legend(loc='upper center')
+plt.savefig(f"{outdir}/done0_Rz_{fig108.number}.pdf")
+
+###
+# 101 - 104
+fig101=plot_RMS_bygroup(align_out_1st, plotted_1st, title_t,filetitle,"Tx",newgrouping,"GL, without 1st constr, TxRz, 10k events, nu=3.8",absolute=False,iternum=9)
+fig101=plot_RMS_bygroup(align_out_low_lumi, plotted_low_lumi, title_t,filetitle,"Tx",newgrouping,"GL, config5, with CB hack, TxRz, 10k events, nu=3.8",absolute=False,iternum=9,fig=fig101,color="C1",nudge=20)
+plt.ylabel(r"Mean Tx ($\mu m$)")
+plt.xlabel("Group position in z (m)")
+plt.legend(loc='upper center')
+plt.savefig(f"{outdir}/done0_Tx_5000MU_{fig101.number}.pdf")
+
+fig102=plot_RMS_bygroup(align_out_1st, plotted_1st, title_r,filetitle,"Rz",newgrouping,"GL, witout 1st constr, TxRz, 10k events, nu3.8",absolute=False,iternum=9)
+fig102=plot_RMS_bygroup(align_out_low_lumi, plotted_low_lumi, title_r,filetitle,"Rz",newgrouping,"GL, config5, with CB hack, TxRz, 10k events, nu=3.8",absolute=False,iternum=9,fig=fig102,color="C1",nudge=20)
+plt.ylabel(r"Mean Rz (mrad)")
+plt.xlabel("Group position in z (m)")
+plt.legend(loc='upper center')
+plt.savefig(f"{outdir}/done0_Tz_5000MU_{fig102.number}.pdf")
+
+fig103=plot_RMS_bygroup(align_out_2nd, plotted_2nd, title_t,filetitle,"Tx",newgrouping,"GL, without 2nd constr, TxRz, 10k events, nu=3.8",absolute=False,iternum=9)
+fig103=plot_RMS_bygroup(align_out_low_lumi, plotted_low_lumi, title_t,filetitle,"Tx",newgrouping,"GL, config5, with CB hack, TxRz, 10k events, nu=3.8",absolute=False,iternum=9,fig=fig103,color="C1",nudge=20)
+plt.ylabel(r"Mean Tx ($\mu m$)")
+plt.xlabel("Group position in z (m)")
+plt.legend(loc='upper center')
+plt.savefig(f"{outdir}/done0_Rx_{fig103.number}.pdf")
+
+fig104=plot_RMS_bygroup(align_out_2nd, plotted_2nd, title_r,filetitle,"Rz",newgrouping,"GL, without 2nd constr, TxRz, 10k events, nu=3.8",absolute=False,iternum=9)
+fig104=plot_RMS_bygroup(align_out_low_lumi, plotted_low_lumi, title_r,filetitle,"Rz",newgrouping,"GL, config5, with CB hack, TxRz, 10k events, nu=3.8",absolute=False,iternum=9,fig=fig104,color="C1",nudge=20)
+plt.ylabel(r"Mean Rz (mrad)")
+plt.xlabel("Group position in z (m)")
+plt.legend(loc='upper center')
+plt.savefig(f"{outdir}/done0_Rz_{fig104.number}.pdf")
+
+###
+# 97 - 100
+fig97=plot_RMS_bygroup(align_out_normal_nohack, plotted_normal_nohack, title_t,filetitle,"Tx",newgrouping,"GL, config5, TxRz, 10k events, nu=7.6",absolute=False,iternum=9)
+fig97=plot_RMS_bygroup(align_out_normal_lumi, plotted_normal_lumi, title_t,filetitle,"Tx",newgrouping,"GL, config5, with CB hack, TxRz, 10k events, nu=7.6",absolute=False,iternum=9,fig=fig97,color="C1",nudge=20)
+plt.ylabel(r"Mean Tx ($\mu m$)")
+plt.xlabel("Group position in z (m)")
+plt.legend(loc='upper center')
+plt.savefig(f"{outdir}/done0_Tx_5000MU_{fig97.number}.pdf")
+
+fig98=plot_RMS_bygroup(align_out_normal_nohack, plotted_normal_nohack, title_r,filetitle,"Rz",newgrouping,"GL, config5, TxRz, 10k events, nu=7.6",absolute=False,iternum=9)
+fig98=plot_RMS_bygroup(align_out_normal_lumi, plotted_normal_lumi, title_r,filetitle,"Rz",newgrouping,"GL, config5, with CB hack, TxRz, 10k events, nu=7.6",absolute=False,iternum=9,fig=fig98,color="C1",nudge=20)
+plt.ylabel(r"Mean Rz (mrad)")
+plt.xlabel("Group position in z (m)")
+plt.legend(loc='upper center')
+plt.savefig(f"{outdir}/done0_Tz_5000MU_{fig98.number}.pdf")
+
+fig99=plot_RMS_bygroup(align_out_low_nohack, plotted_low_nohack, title_t,filetitle,"Tx",newgrouping,"GL, config5, TxRz, 10k events, nu=3.8",absolute=False,iternum=9)
+fig99=plot_RMS_bygroup(align_out_low_lumi, plotted_low_lumi, title_t,filetitle,"Tx",newgrouping,"GL, config5, with CB hack, TxRz, 10k events, nu=3.8",absolute=False,iternum=9,fig=fig99,color="C1",nudge=20)
+plt.ylabel(r"Mean Tx ($\mu m$)")
+plt.xlabel("Group position in z (m)")
+plt.legend(loc='upper center')
+plt.savefig(f"{outdir}/done0_Rx_{fig99.number}.pdf")
+
+fig100=plot_RMS_bygroup(align_out_low_nohack, plotted_low_nohack, title_r,filetitle,"Rz",newgrouping,"GL, config5, TxRz, 10k events, nu=3.8",absolute=False,iternum=9)
+fig100=plot_RMS_bygroup(align_out_low_lumi, plotted_low_lumi, title_r,filetitle,"Rz",newgrouping,"GL, config5, with CB hack, TxRz, 10k events, nu=3.8",absolute=False,iternum=9,fig=fig100,color="C1",nudge=20)
+plt.ylabel(r"Mean Rz (mrad)")
+plt.xlabel("Group position in z (m)")
+plt.legend(loc='upper center')
+plt.savefig(f"{outdir}/done0_Rz_{fig100.number}.pdf")
+
+###
+#93 - 96
+fig93=plot_RMS_bygroup(align_out_low_lumi, plotted_low_lumi, title_t,filetitle,"Tx",newgrouping,"GL, config5, TxRz, 10k events, nu=3.8",absolute=False,iternum=9)
+fig93=plot_RMS_bygroup(align_out_normal_lumi, plotted_normal_lumi, title_t,filetitle,"Tx",newgrouping,"GL, config5, TxRz, 10k events, nu=7.6",absolute=False,iternum=9,fig=fig93,color="C1",nudge=20)
+plt.ylabel(r"Mean Tx ($\mu m$)")
+plt.xlabel("Group position in z (m)")
+plt.legend(loc='upper center')
+plt.savefig(f"{outdir}/done0_Tx_5000MU_{fig93.number}.pdf")
+
+fig94=plot_RMS_bygroup(align_out_low_lumi, plotted_low_lumi, title_t,filetitle,"Tz",newgrouping,"GL, config5, TxRz, 10k events, nu=3.8",absolute=False,iternum=9)
+fig94=plot_RMS_bygroup(align_out_normal_lumi, plotted_normal_lumi, title_t,filetitle,"Tz",newgrouping,"GL, config5, TxRz, 10k events, nu=7.6",absolute=False,iternum=9,fig=fig94,color="C1",nudge=20)
+plt.ylabel(r"Mean Tz ($\mu m$)")
+plt.xlabel("Group position in z (m)")
+plt.legend(loc='upper center')
+plt.savefig(f"{outdir}/done0_Tz_5000MU_{fig94.number}.pdf")
+
+fig95=plot_RMS_bygroup(align_out_low_lumi, plotted_low_lumi, title_r,filetitle,"Rx",newgrouping,"GL, config5, TxRz, 10k events, nu=3.8",absolute=False,iternum=9)
+fig95=plot_RMS_bygroup(align_out_normal_lumi, plotted_normal_lumi, title_r,filetitle,"Rx",newgrouping,"GL, config5, TxRz, 10k events, nu=7.6",absolute=False,iternum=9,fig=fig95,color="C1",nudge=20)
+plt.ylabel(r"Mean Rx (mrad)")
+plt.xlabel("Group position in z (m)")
+plt.legend(loc='upper center')
+plt.savefig(f"{outdir}/done0_Rx_{fig95.number}.pdf")
+
+fig96=plot_RMS_bygroup(align_out_low_lumi, plotted_low_lumi, title_r,filetitle,"Rz",newgrouping,"GL, config5, TxRz, 10k events, nu=3.8",absolute=False,iternum=9)
+fig96=plot_RMS_bygroup(align_out_normal_lumi, plotted_normal_lumi, title_r,filetitle,"Rz",newgrouping,"GL, config5, TxRz, 10k events, nu=7.6",absolute=False,iternum=9,fig=fig96,color="C1",nudge=20)
+plt.ylabel(r"Mean Rz (mrad)")
+plt.xlabel("Group position in z (m)")
+plt.legend(loc='upper center')
+plt.savefig(f"{outdir}/done0_Rz_{fig96.number}.pdf")
+
+#align_out_stack_config5_2019, plotted_stack_config5_2019
+fig89=plot_RMS_bygroup(align_out_config5_5000MU, plotted_config5_5000MU, title_t,filetitle,"Tx",newgrouping,"config 5, 2019 data, 5000MU",absolute=False,iternum=9)
+fig89=plot_RMS_bygroup(align_out_stack_config5_2019, plotted_stack_config5_2019,title_t,filetitle,"Tx",newgrouping,"config5, 2019, 5000MU, stack",absolute=False,iternum=9,fig=fig89,color="C1",nudge=20)
+plt.ylabel(r"Mean Tx ($\mu m$)")
+plt.xlabel("Group position in z (m)")
+plt.legend(loc='upper center')
+plt.savefig(f"{outdir}/c5_retest_Tx_{fig89.number}.pdf")
+
+fig90=plot_RMS_bygroup(align_out_config5_5000MU, plotted_config5_5000MU, title_t,filetitle,"Tz",newgrouping,"config 5, 2019 data, 5000MU",absolute=False,iternum=9)
+fig90=plot_RMS_bygroup(align_out_stack_config5_2019, plotted_stack_config5_2019,title_t,filetitle,"Tz",newgrouping,"config5, 2019, stack",absolute=False,iternum=9,fig=fig90,color="C1",nudge=20)
+plt.ylabel(r"Mean Tz ($\mu m$)")
+plt.xlabel("Group position in z (m)")
+plt.legend(loc='upper center')
+plt.savefig(f"{outdir}/c5_retest_Tz_{fig90.number}.pdf")
+
+fig91=plot_RMS_bygroup(align_out_config5_5000MU, plotted_config5_5000MU, title_r,filetitle,"Rx",newgrouping,"config 5, 2019 data, 5000MU",absolute=False,iternum=9)
+fig91=plot_RMS_bygroup(align_out_stack_config5_2019, plotted_stack_config5_2019,title_r,filetitle,"Rx",newgrouping,"config5, 2019, stack",absolute=False,iternum=9,fig=fig91,color="C1",nudge=20)
+plt.ylabel(r"Mean Rx (mrad)")
+plt.xlabel("Group position in z (m)")
+plt.legend(loc='upper center')
+plt.savefig(f"{outdir}/c5_retest_Rx_{fig91.number}.pdf")
+
+fig92=plot_RMS_bygroup(align_out_config5_5000MU, plotted_config5_5000MU, title_r,filetitle,"Rz",newgrouping,"config 5, 2019 data, 5000MU",absolute=False,iternum=9)
+fig92=plot_RMS_bygroup(align_out_stack_config5_2019, plotted_stack_config5_2019,title_r,filetitle,"Rz",newgrouping,"config5, 2019, stack",absolute=False,iternum=9,fig=fig92,color="C1",nudge=20)
+plt.ylabel(r"Mean Rz (mrad)")
+plt.xlabel("Group position in z (m)")
+plt.legend(loc='upper center')
+plt.savefig(f"{outdir}/c5_retest_Rz_{fig92.number}.pdf")
+
+#align_out_stack_TxRz_2020, plotted_stack_TxRz_2020
+fig53=plot_RMS_bygroup(align_out_stack_TxRz_2020, plotted_stack_TxRz_2020, title_t,filetitle,"Tx",newgrouping,"HE, config5, 2020, TxRz, 10k events, stack",absolute=False,iternum=9)
+fig53=plot_RMS_bygroup(align_out_done9, plotted_done9,title_t,filetitle,"Tx",newgrouping,"HE, config5, 2020, TxRz, 10k events",absolute=False,iternum=9,fig=fig53,color="C1",nudge=20)
+plt.ylabel(r"Mean Tx ($\mu m$)")
+plt.xlabel("Group position in z (m)")
+plt.legend(loc='upper center')
+plt.savefig(f"{outdir}/done0_Tx_5000MU_{fig53.number}.pdf")
+
+fig54=plot_RMS_bygroup(align_out_stack_TxRz_2020, plotted_stack_TxRz_2020, title_t,filetitle,"Tz",newgrouping,"HE, config5, 2020, TxRz, 10k events, stack",absolute=False,iternum=9)
+fig54=plot_RMS_bygroup(align_out_done9, plotted_done9,title_t,filetitle,"Tz",newgrouping,"HE, config5, 2020, TxRz, 10k events",absolute=False,iternum=9,fig=fig54,color="C1",nudge=20)
+plt.ylabel(r"Mean Tz ($\mu m$)")
+plt.xlabel("Group position in z (m)")
+plt.legend(loc='upper center')
+plt.savefig(f"{outdir}/done0_Tz_5000MU_{fig54.number}.pdf")
+
+fig55=plot_RMS_bygroup(align_out_stack_TxRz_2020, plotted_stack_TxRz_2020, title_r,filetitle,"Rx",newgrouping,"HE, config5, 2020, TxRz, 10k events, stack",absolute=False,iternum=9)
+fig55=plot_RMS_bygroup(align_out_done9, plotted_done9,title_r,filetitle,"Rx",newgrouping,"HE, config5, 2020, TxRz, 10k events",absolute=False,iternum=9,fig=fig55,color="C1",nudge=20)
+plt.ylabel(r"Mean Rx (mrad)")
+plt.xlabel("Group position in z (m)")
+plt.legend(loc='upper center')
+plt.savefig(f"{outdir}/done0_Rx_{fig55.number}.pdf")
+
+fig56=plot_RMS_bygroup(align_out_stack_TxRz_2020, plotted_stack_TxRz_2020, title_r,filetitle,"Rz",newgrouping,"HE, config5, 2020, TxRz, 10k events, stack",absolute=False,iternum=9)
+fig56=plot_RMS_bygroup(align_out_done9, plotted_done9,title_r,filetitle,"Rz",newgrouping,"HE, config5, 2020, TxRz, 10k events",absolute=False,iternum=9,fig=fig56,color="C1",nudge=20)
+plt.ylabel(r"Mean Rz (mrad)")
+plt.xlabel("Group position in z (m)")
+plt.legend(loc='upper center')
+plt.savefig(f"{outdir}/done0_Rz_{fig56.number}.pdf")
+
 outdir = "donefiles"
 
 #12

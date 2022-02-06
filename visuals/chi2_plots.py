@@ -7,6 +7,7 @@ import json
 # names_30k = ["2019,TxTz,30k", "2019,TxTz,withModules,30k"]
 names = ['2020, config5, TxTzRxRz', '2020, config5, TxRz', '2020, withModules, TxTzRxRz', '2020, withModules, TxRz']#, "2020, 16iter TxRz", "2019,TxRz,normal,6.5k", "2019,TxRz,modules,6.5k", "onlyModules,2019,TxRz", "onlyModules,2020,TxRz"]
 names_2020 = ["config5, TxRz", "config5, TxTzRxRz", "withModules, TxRz", "withModules, TxTzRxRz", "2020, original c5, 20iter"]
+
 names_c5 = ["2020 c5", "2019 c5", "2020, iter20 c5"] # number 4, 5 and 13
 nums_c5 = [4, 5, 13]
 # for 2019 data (up to #8)
